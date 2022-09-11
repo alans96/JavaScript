@@ -1,0 +1,55 @@
+<!-- EX para mostrar média e o produto com funções -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+<body>
+    <header>
+        <h1>Mostrar média e o produto com funções </h1>
+    </header>
+    
+    <section>
+        <div id="dados">
+            <p>Número 1: <input type="number" name="n1" id="n1"></p>
+            <p>Número 2: <input type="number" name="n2" id="n2"></p>
+            <p><input type="button" value="Cálcular Média" onclick="media()"></p>
+            <p><input type="button" value="Cálcular Produto" onclick="produto()"></p>
+        </div>
+
+        <div id="res">
+            Resultado
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Alan Silva</p>
+    </footer>
+
+    <script>
+        function media(){
+            const n1 = Number(document.getElementById('n1').value)
+            const n2 = Number(document.getElementById('n2').value)
+            const res = document.querySelector("div#res")
+
+            const resultado = (n1+n2)/2
+            
+            res.innerHTML = `<p>A média foi de ${resultado}</p>`
+
+        }
+        function produto(){
+            const n1 = Number(document.getElementById('n1').value)
+            const n2 = Number(document.getElementById('n2').value)
+            const res = document.querySelector("div#res")
+
+            const resultado = n1*n2
+            
+            res.innerHTML = `<p>O produto foi de ${resultado}</p>`
+
+        }
+    </script>
+</body>
+</html>
