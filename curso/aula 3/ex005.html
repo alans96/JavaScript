@@ -1,0 +1,53 @@
+<!-- EX para mostrar média e o produto com funções -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+<body>
+    <header>
+        <h1>Mostrar média e o produto com funções </h1>
+    </header>
+    
+    <section>
+        <div id="dados">
+            <p>Salário: <input type="number" name="sal" id="sal"></p>
+            <p><input type="button" value="Cálcular Média" onclick="descontos()"></p>
+        </div>
+
+        <div id="res">
+            Resultado
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Alan Silva</p>
+    </footer>
+
+    <script>
+        function descontos(){
+            function descontos_inss(){
+                const retorno_inss = sal*(10/100)
+                return retorno_inss
+            } 
+            function descontos_fgts(){
+                const retorno_fgts = sal*(8/100)
+                return retorno_fgts
+            }
+            function descontos_plano_saude(){
+                const retorno_plano_de_saude = 100
+                return retorno_plano_de_saude
+            }
+
+            const sal = Number(document.getElementById('sal').value)
+            const res = document.querySelector("div#res")
+
+            const retorno_total = sal-(descontos_inss() + descontos_fgts() + retorno_plano_de_saude())
+            res.innerHTML = `<p>O salário final é de ${retorno_total}</p>`
+        }
+    </script>
+</body>
+</html>

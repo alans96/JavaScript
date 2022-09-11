@@ -1,0 +1,40 @@
+<!-- EX para mostrar média e o produto com funções -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body>
+    <header>
+        <h1>Mostrar média e o produto com funções </h1>
+    </header>
+    
+    <footer>
+        <p>&copy; Alan Silva</p>
+    </footer>
+
+    <script>
+        function calcula_media_ponderada(){
+            for (let i = 0; i < 2; i++){
+                
+                const pp1 = parseInt( prompt('Primeiro peso nota:')) 
+                const pp2 = parseInt( prompt('Segundo peso nota:')) 
+                const matricula = parseInt( prompt('Matrícula:'))
+                const p1 = parseInt( prompt('Primeira nota:')) 
+                const p2 = parseInt( prompt('Segunda nota:')) 
+
+                let resultado = ((p1*pp1) + (p2*pp2))/(pp1 + pp2)
+
+                console.log(`O aluno com mátricula ${matricula} possui a média ponderada de ${resultado}</p>`)
+            }
+        }   
+        
+    calcula_media_ponderada()
+           
+    </script>
+</body>
+</html>

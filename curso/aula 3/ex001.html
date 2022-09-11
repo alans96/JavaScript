@@ -16,8 +16,8 @@
         <div id="dados">
             <p>Número 1: <input type="number" name="n1" id="n1"></p>
             <p>Número 2: <input type="number" name="n2" id="n2"></p>
-            <p><input type="button" value="Cálcular Média" onclick="media()"></p>
-            <p><input type="button" value="Cálcular Produto" onclick="produto()"></p>
+            <p><input type="button" value="Cálcular Média" onclick="calcula_media()"></p>
+            <p><input type="button" value="Cálcular Produto" onclick="calcula_produto()"></p>
         </div>
 
         <div id="res">
@@ -30,9 +30,9 @@
     </footer>
 
     <script>
-        function media(){
-            const n1 = Number(document.getElementById('n1').value)
-            const n2 = Number(document.getElementById('n2').value)
+        function calcula_media(){
+            const n1 = parseInt(document.getElementById('n1').value)
+            const n2 = parseFloat(document.getElementById('n2').value)
             const res = document.querySelector("div#res")
 
             const resultado = (n1+n2)/2
@@ -40,7 +40,7 @@
             res.innerHTML = `<p>A média foi de ${resultado}</p>`
 
         }
-        function produto(){
+        function calcula_produto(){
             const n1 = Number(document.getElementById('n1').value)
             const n2 = Number(document.getElementById('n2').value)
             const res = document.querySelector("div#res")
