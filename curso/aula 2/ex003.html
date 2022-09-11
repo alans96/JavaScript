@@ -1,0 +1,43 @@
+<!-- EX para transformar Fahrenheit em Celsius -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Exercício para Transformar Fahrenheit em Celsius </h1>
+    </header>
+    
+    <section>
+        <div id="dados">
+            <p>Temperatura em Fahrenheit: <input type="number" name="fah" id="f"></p>
+            <p><input type="button" value="Cálcular" onclick="temperatura()"></p>
+        </div>
+
+        <div id="res">
+            Resultado
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Alan Silva</p>
+    </footer>
+
+    <script>
+        function temperatura(){
+            const f = Number(document.getElementById('f').value)
+            const res = document.querySelector("div#res")
+
+            const valorcelsius = 5*((f-32)/9)
+
+            res.innerHTML = `<p>A temperatura em Celcius foi de ${valorcelsius}</p>`
+
+            }
+    </script>
+</body>
+</html>

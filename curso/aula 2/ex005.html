@@ -1,0 +1,49 @@
+<!-- EX para mostrar a quantidade de piso em um retangulo -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mostrar a quantidade de piso em um retangulo </h1>
+    </header>
+    
+    <section>
+        <div id="dados">
+            <p>Lado A(m): <input type="number" name="lA" id="ladoA"></p>
+            <p>Lado B(m): <input type="number" name="lB" id="ladoB"></p>
+            <p><input type="button" value="Cálcular" onclick="calcular()"></p>
+        </div>
+
+        <div id="res">
+            Resultado
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Alan Silva</p>
+    </footer>
+
+    <script>
+        function calcular(){
+            const lado1 = Number(document.getElementById('ladoA').value)
+            const lado2 = Number(document.getElementById('ladoB').value)
+            const res = document.querySelector("div#res")
+
+            const area = lado1*lado2
+            const piso = 2.5*2.5
+
+            nunpiso = area/piso
+            
+
+            res.innerHTML = `<p>A área foi de ${area}(m^2) e a quantidade necessaria  de pisos é de ${nunpiso}.</p>`
+
+            }
+    </script>
+</body>
+</html>

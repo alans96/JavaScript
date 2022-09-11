@@ -1,0 +1,43 @@
+<!-- EX para fazer a área do circulo -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Exercício Sobre a Área do Circulo</h1>
+    </header>
+    
+    <section>
+        <div id="dados">
+            <p>Raio da circunferência: <input type="number" name="raio" id="raio"></p>
+            <p><input type="button" value="Cálcular" onclick="area()"></p>
+        </div>
+
+        <div id="res">
+            Resultado
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Alan Silva</p>
+    </footer>
+
+    <script>
+        function area(){
+            const raio = Number(document.getElementById('raio').value)
+            const res = document.querySelector("div#res")
+
+            const areaFinal = (raio**2)*Math.PI
+
+            res.innerHTML = `<p>A Área foi de ${areaFinal}</p>`
+
+            }
+    </script>
+</body>
+</html>
