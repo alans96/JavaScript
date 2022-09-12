@@ -14,8 +14,9 @@
     
     <section>
         <div id="dados">
-            <p>Salário: <input type="number" name="sal" id="sal"></p>
-            <p><input type="button" value="Cálcular Média" onclick="reajuste()"></p>
+            <p>Valor de hora trabalhada: <input type="number" name="hora_sal" id="hora_sal"></p>
+            <p>Horas trabalhadas no mês: <input type="number" name="hora_mes" id="hora_mes"></p>
+            <p><input type="button" value="Cálcular Média" onclick="tributo()"></p>
         </div>
 
         <div id="res">
@@ -28,25 +29,27 @@
     </footer>
 
     <script>
-        function reajuste(){
-            const sal = parseInt(document.getElementById('sal').value)
+        function tributo(){
+            const hora_sal = parseFloat(document.getElementById('hora_sal').value)
+            const hora_mes = parseFloat(document.getElementById('hora_mes').value)
             const res = document.querySelector("div#res")
 
-            if (sal <= 280){
-                const aumento = sal*(20/100)
-                res.innerHTML = `<p>Salário anterior: ${sal}<br> Aumento: 20% = ${aumento}<br> Salário Final:${aumento+ sal}</p>`   
+            const total_sal = hora_mes * hora_sal
 
-            } else if (sal <= 700){
-                const aumento = sal*(15/100)
-                res.innerHTML = `<p>Salário anterior: ${sal}<br> Aumento: 15% = ${aumento}<br> Salário Final:${aumento+ sal}</p>`  
+            if (total_sal <= 900){
+                res.innerHTML = `<p>Isento com salário de ${total_sal}</p>`   
 
-            } else if (sal <= 1500) {
-                const aumento = sal*(10/100)
-                res.innerHTML = `<p>Salário anterior: ${sal}<br> Aumento: 10% = ${aumento}<br> Salário Final:${aumento+ sal}</p>`   
+            } else if (total_sal <= 1500){
+                const desconto = total_sal*(5/100)
+                res.innerHTML = `<p>Salário bruto: ${total_sal}<br> desconto: 5% = ${desconto}<br> Salário Final:${total_sal - desconto}</p>`  
+
+            } else if (total_sal <= 2500) {
+                const desconto = total_sal*(10/100)
+                res.innerHTML = `<p>Salário bruto: ${total_sal}<br> desconto: 10% = ${desconto}<br> Salário Final:${total_sal - desconto}</p>`   
             
             }else {
-                const aumento = sal*(5/100)
-                res.innerHTML = `<p>Salário anterior: ${sal}<br> Aumento: 5% = ${aumento}<br> Salário Final:${aumento+ sal}</p>` 
+                const desconto = total_sal*(20/100)
+                res.innerHTML = `<p>Salário bruto: ${total_sal}<br> desconto: 20% = ${desconto}<br> Salário Final:${total_sal - desconto}</p>` 
             }                   
         } 
     </script>
