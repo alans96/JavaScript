@@ -34,10 +34,20 @@
             const n2 = parseInt(document.getElementById('n1').value)
             const res = document.querySelector("div#res")
 
-            if 
-            const resultado = sal
+            const resultado = (n1+n2)/2
 
-            res.innerHTML = `<p>O salário final é de ${resultado}</p>`          
+            if (resultado == 10){
+                res.innerHTML = `<p>Aprovado com distinção com média de ${resultado}</p>`   
+
+            } else if (resultado >= 7){
+                res.innerHTML = `<p>Aprovado com média de ${resultado}</p>`   
+
+            } else {
+                res.innerHTML = `<p>Reprovado com média de ${resultado}</p>`   
+            }
+            
+
+                   
         } 
     </script>
 </body>

@@ -1,0 +1,54 @@
+<!-- EX para mostrar média e o produto com funções -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+<body>
+    <header>
+        <h1>Mostrar média e o produto com funções </h1>
+    </header>
+    
+    <section>
+        <div id="dados">
+            <p>Salário: <input type="number" name="sal" id="sal"></p>
+            <p><input type="button" value="Cálcular Média" onclick="reajuste()"></p>
+        </div>
+
+        <div id="res">
+            Resultado
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Alan Silva</p>
+    </footer>
+
+    <script>
+        function reajuste(){
+            const sal = parseInt(document.getElementById('sal').value)
+            const res = document.querySelector("div#res")
+
+            if (sal <= 280){
+                const aumento = sal*(20/100)
+                res.innerHTML = `<p>Salário anterior: ${sal}<br> Aumento: 20% = ${aumento}<br> Salário Final:${aumento+ sal}</p>`   
+
+            } else if (sal <= 700){
+                const aumento = sal*(15/100)
+                res.innerHTML = `<p>Salário anterior: ${sal}<br> Aumento: 15% = ${aumento}<br> Salário Final:${aumento+ sal}</p>`  
+
+            } else if (sal <= 1500) {
+                const aumento = sal*(10/100)
+                res.innerHTML = `<p>Salário anterior: ${sal}<br> Aumento: 10% = ${aumento}<br> Salário Final:${aumento+ sal}</p>`   
+            
+            }else {
+                const aumento = sal*(5/100)
+                res.innerHTML = `<p>Salário anterior: ${sal}<br> Aumento: 5% = ${aumento}<br> Salário Final:${aumento+ sal}</p>` 
+            }                   
+        } 
+    </script>
+</body>
+</html>
